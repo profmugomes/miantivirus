@@ -9,7 +9,7 @@ MiAntivirus is a graphical interface for ClamAV that allows you to scan your com
 
 ## Contribution
 
-1. Report Bugs or Suggestions: https://github.com/mugomes/miantivirus/issues
+1. Report Bugs or Suggestions: https://github.com/bluiceoficial/miantivirus/issues
 
 2. Send translations for more languages: Download the .po file, translate it and submit it via Pull Request
 
@@ -19,16 +19,15 @@ MiAntivirus is a graphical interface for ClamAV that allows you to scan your com
 
 ## Support
 
-- https://github.com/sponsors/mugomes
-- https://mugomes.github.io/apoie.html
+- https://github.com/sponsors/bluiceoficial
 
 ## Official MiAntivirus link
 
-- https://github.com/mugomes/miantivirus
+- https://github.com/bluiceoficial/miantivirus
 
 ### Official Author link
 
-- https://mugomes.github.io
+- https://www.bluice.com.br
 
 ### Links to Third-Party Resources Used
 
@@ -67,7 +66,7 @@ sudo apt install -f
 
 ### Integrity
 
-To verify integrity, copy the hash provided next to the downloaded release and use [MiCheckHash](https://github.com/mugomes/micheckhash/releases) (graphical interface) to verify its integrity, or use the terminal.
+To verify integrity, copy the hash provided next to the downloaded release and use [MiCheckHash](https://github.com/bluiceoficial/micheckhash/releases) (graphical interface) to verify its integrity, or use the terminal.
 
 Example:
 
