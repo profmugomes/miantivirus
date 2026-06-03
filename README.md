@@ -31,8 +31,7 @@ MiAntivirus is a graphical interface for ClamAV that allows you to scan your com
 
 ### Links to Third-Party Resources Used
 
-- https://go.dev
-- https://fyne.io
+- https://gambaswiki.org/website/en/main.html
 - https://www.clamav.net
 - https://github.com/polkit-org/polkit/
 
