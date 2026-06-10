@@ -1,5 +1,8 @@
 # MiAntivirus
 
+> [!NOTE]
+> This repository has been migrated to Codeberg, please see: https://codeberg.org/bluice/miantivirus
+
 MiAntivirus is a graphical interface for ClamAV that allows you to scan your computer for viruses and easily update the virus definition database through a user-friendly interface.
 
 ## Screenshots
