@@ -1,0 +1,115 @@
+// Copyright (C) 2024-2026 Murilo Gomes Julio
+// SPDX-License-Identifier: GPL-2.0-only
+
+// Site: https://www.bluice.com.br
+
+package main
+
+import (
+	"net/url"
+
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/app"
+	"fyne.io/fyne/v2/layout"
+	"fyne.io/fyne/v2/widget"
+
+	"github.com/bluiceoficial/blucolumnview"
+	"github.com/bluiceoficial/bludialogbox"
+
+	c "bluiceoficial/miantivirus/controls"
+
+	"github.com/bluiceoficial/blusmartflow"
+)
+
+const VERSION_APP string = "2.0.0"
+
+func main() {
+	c.LoadTranslations()
+
+	app := app.NewWithID("br.com.bluice.miantivirus")
+	app.Settings().SetTheme(&myDarkTheme{})
+	app.SetIcon(resourcePng)
+
+	window := app.NewWindow("MiAntivirus")
+	window.CenterOnScreen()
+	window.SetFixedSize(true)
+	window.Resize(fyne.NewSize(659, 457))
+
+	mnuTools := fyne.NewMenu(c.T("Tools"),
+		fyne.NewMenuItem(c.T("Update Database"), func() {
+			showUpdateDB(app)
+		}),
+		fyne.NewMenuItemSeparator(),
+		fyne.NewMenuItem(c.T("Options"), func() {
+			showOptions(app)
+		}),
+	)
+
+	mnuAbout := fyne.NewMenu(c.T("About"),
+		fyne.NewMenuItem(c.T("Check for Updates"), func() {
+			url, _ := url.Parse("https://github.com/bluiceoficial/miantivirus/releases")
+			app.OpenURL(url)
+		}),
+		fyne.NewMenuItemSeparator(),
+		fyne.NewMenuItem(c.T("Support MiAntivirus"), func() {
+			url, _ := url.Parse("https://www.bluice.com.br/apoie/")
+			app.OpenURL(url)
+		}),
+		fyne.NewMenuItemSeparator(),
+		fyne.NewMenuItem(c.T("About MiAntivirus"), func() {
+			showAbout(app)
+		}),
+	)
+	window.SetMainMenu(fyne.NewMainMenu(mnuTools, mnuAbout))
+
+	flow := blusmartflow.New()
+
+	ctnSpace1 := widget.NewLabel(" ")
+
+	flow.AddRow(ctnSpace1)
+	flow.Resize(ctnSpace1, window.Canvas().Size().Width, 7)
+
+	lstArquivos := blucolumnview.NewColumnView(
+		[]string{c.T("Files")},
+		[]float32{38, 400, 100}, true,
+	)
+
+	btnAddFile := widget.NewButton(c.T("Add File"), func() {
+		bludialogbox.NewOpenFile(app, c.T("Open Files"), []string{}, true, func(filenames []string) {
+			for _, filename := range filenames {
+				lstArquivos.AddRow([]string{filename})
+			}
+		})
+	})
+
+	btnAddFolder := widget.NewButton(c.T("Add Folder"), func() {
+		bludialogbox.NewSelectDirectory(app, c.T("Select Directory"), true, func(filenames []string) {
+			for _, filename := range filenames {
+				lstArquivos.AddRow([]string{filename})
+			}
+		})
+	})
+
+	btnRemoverLista := widget.NewButton(c.T("Remove from List"), func() {
+		lstArquivos.RemoveSelected()
+	})
+
+	flow.AddColumn(btnAddFile, btnAddFolder, btnRemoverLista)
+	flow.Gap(btnAddFile, 7, 17)
+
+	flow.AddRow(lstArquivos)
+	flow.Resize(lstArquivos, window.Canvas().Size().Width, 272)
+
+	btnEscanear := widget.NewButton(c.T("Scan"), func() {
+		showScan(app, lstArquivos.ListAll())
+	})
+
+	flow.AddColumn(
+		layout.NewSpacer(),
+		btnEscanear,
+		layout.NewSpacer(),
+	)
+
+	window.SetContent(flow.Container)
+	window.ShowAndRun()
+}
