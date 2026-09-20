@@ -19,7 +19,7 @@ import (
 	c "profmugomes/miantivirus/controls"
 )
 
-const VERSION_APP string = "2.0.0"
+const VERSION_APP string = "4.0.0"
 
 func main() {
 	c.LoadTranslations()
