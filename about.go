@@ -33,20 +33,20 @@ func showAbout(a fyne.App) {
 
 	lblDesenvolvedor1 := widget.NewLabel("Developed by:")
 	lblDesenvolvedor1.TextStyle = fyne.TextStyle{Bold: true}
-	lblDesenvolvedor2 := widget.NewLabel("Murilo Gomes Julio")
+	lblDesenvolvedor2 := widget.NewLabel("Murilo Gomes")
 
 	flow.AddColumn(lblDesenvolvedor1, lblDesenvolvedor2)
 	flow.Resize(lblDesenvolvedor1, 142, 0)
 	lblSite1 := widget.NewLabel("Site:")
 	lblSite1.TextStyle = fyne.TextStyle{Bold: true}
 
-	sURL, _ := url.Parse("https://www.bluice.com.br")
-	lblSite2 := widget.NewHyperlink("https://www.bluice.com.br", sURL)
+	sURL, _ := url.Parse("https://www.profmugomes.com.br")
+	lblSite2 := widget.NewHyperlink("https://www.profmugomes.com.br", sURL)
 
 	flow.AddColumn(lblSite1, lblSite2)
 	flow.Resize(lblSite1, 34, 0)
 
-	lblCopyright1 := widget.NewLabel("Copyright (C) 2024-2026 Murilo Gomes Julio")
+	lblCopyright1 := widget.NewLabel("Copyright (C) 2024-2026 Murilo Gomes <profmugomes.com.br>")
 	lblCopyright1.TextStyle = fyne.TextStyle{Bold: true}
 	flow.AddRow(lblCopyright1)
 
