@@ -36,7 +36,7 @@ func showAbout(a fyne.App) {
 	lblDesenvolvedor2 := widget.NewLabel("Murilo Gomes")
 
 	flow.AddColumn(lblDesenvolvedor1, lblDesenvolvedor2)
-	flow.Resize(lblDesenvolvedor1, 142, 0)
+	flow.Resize(lblDesenvolvedor1, 112, 0)
 	lblSite1 := widget.NewLabel("Site:")
 	lblSite1.TextStyle = fyne.TextStyle{Bold: true}
 
