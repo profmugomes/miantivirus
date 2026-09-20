@@ -1,7 +1,7 @@
-// Copyright (C) 2024-2026 Murilo Gomes Julio
+// Copyright (C) 2024-2026 Murilo Gomes <profmugomes.com.br>
 // SPDX-License-Identifier: GPL-2.0-only
 
-// Site: https://www.bluice.com.br
+// Site: https://www.profmugomes.com.br
 
 package main
 
@@ -12,13 +12,11 @@ import (
 	"fyne.io/fyne/v2/app"
 	"fyne.io/fyne/v2/layout"
 	"fyne.io/fyne/v2/widget"
+	"github.com/profmugomes/mgcolumnview/v2"
+	"github.com/profmugomes/mgdialogbox/v2"
+	"github.com/profmugomes/mgsmartflow/v2"
 
-	"github.com/bluiceoficial/blucolumnview"
-	"github.com/bluiceoficial/bludialogbox"
-
-	c "bluiceoficial/miantivirus/controls"
-
-	"github.com/bluiceoficial/blusmartflow"
+	c "profmugomes/miantivirus/controls"
 )
 
 const VERSION_APP string = "2.0.0"
@@ -26,7 +24,7 @@ const VERSION_APP string = "2.0.0"
 func main() {
 	c.LoadTranslations()
 
-	app := app.NewWithID("br.com.bluice.miantivirus")
+	app := app.NewWithID("br.com.profmugomes.miantivirus")
 	app.Settings().SetTheme(&myDarkTheme{})
 	app.SetIcon(resourcePng)
 
@@ -47,12 +45,12 @@ func main() {
 
 	mnuAbout := fyne.NewMenu(c.T("About"),
 		fyne.NewMenuItem(c.T("Check for Updates"), func() {
-			url, _ := url.Parse("https://github.com/bluiceoficial/miantivirus/releases")
+			url, _ := url.Parse("https://github.com/profmugomes/miantivirus/releases")
 			app.OpenURL(url)
 		}),
 		fyne.NewMenuItemSeparator(),
 		fyne.NewMenuItem(c.T("Support MiAntivirus"), func() {
-			url, _ := url.Parse("https://www.bluice.com.br/apoie/")
+			url, _ := url.Parse("https://github.com/sponsors/profmugomes")
 			app.OpenURL(url)
 		}),
 		fyne.NewMenuItemSeparator(),
@@ -62,20 +60,20 @@ func main() {
 	)
 	window.SetMainMenu(fyne.NewMainMenu(mnuTools, mnuAbout))
 
-	flow := blusmartflow.New()
+	flow := mgsmartflow.New()
 
 	ctnSpace1 := widget.NewLabel(" ")
 
 	flow.AddRow(ctnSpace1)
 	flow.Resize(ctnSpace1, window.Canvas().Size().Width, 7)
 
-	lstArquivos := blucolumnview.NewColumnView(
+	lstArquivos := mgcolumnview.NewColumnView(
 		[]string{c.T("Files")},
 		[]float32{38, 400, 100}, true,
 	)
 
 	btnAddFile := widget.NewButton(c.T("Add File"), func() {
-		bludialogbox.NewOpenFile(app, c.T("Open Files"), []string{}, true, func(filenames []string) {
+		mgdialogbox.NewOpenFile(app, c.T("Open Files"), []string{}, true, func(filenames []string) {
 			for _, filename := range filenames {
 				lstArquivos.AddRow([]string{filename})
 			}
@@ -83,7 +81,7 @@ func main() {
 	})
 
 	btnAddFolder := widget.NewButton(c.T("Add Folder"), func() {
-		bludialogbox.NewSelectDirectory(app, c.T("Select Directory"), true, func(filenames []string) {
+		mgdialogbox.NewSelectDirectory(app, c.T("Select Directory"), true, func(filenames []string) {
 			for _, filename := range filenames {
 				lstArquivos.AddRow([]string{filename})
 			}

@@ -1,7 +1,7 @@
-// Copyright (C) 2024-2026 Murilo Gomes Julio
+// Copyright (C) 2024-2026 Murilo Gomes <profmugomes.com.br>
 // SPDX-License-Identifier: GPL-2.0-only
 
-// Site: https://www.bluice.com.br
+// Site: https://www.profmugomes.com.br
 
 package main
 
@@ -13,16 +13,16 @@ import (
 	"fyne.io/fyne/v2/layout"
 	"fyne.io/fyne/v2/widget"
 
-	"github.com/bluiceoficial/blucolumnview"
-	"github.com/bluiceoficial/bludialogbox"
-	"github.com/bluiceoficial/blunumericentry"
-	"github.com/bluiceoficial/blusettings"
-	"github.com/bluiceoficial/blusmartflow"
+	"github.com/profmugomes/mgcolumnview/v2"
+	"github.com/profmugomes/mgdialogbox/v2"
+	"github.com/profmugomes/mgnumericentry/v2"
+	"github.com/profmugomes/mgsettings/v4"
+	"github.com/profmugomes/mgsmartflow/v2"
 
-	c "bluiceoficial/miantivirus/controls"
+	c "profmugomes/miantivirus/controls"
 )
 
-func SelectRowsToStrings(rows []blucolumnview.SelectRow) []string {
+func SelectRowsToStrings(rows []mgcolumnview.SelectRow) []string {
 	out := make([]string, 0)
 
 	for _, r := range rows {
@@ -40,9 +40,9 @@ func showOptions(app fyne.App) {
 	window.SetFixedSize(true)
 	window.Resize(fyne.NewSize(500, 600))
 
-	bluconfig, _ := blusettings.Load("miantivirus", true)
+	bluconfig, _ := mgsettings.Load("miantivirus", true)
 
-	flowGeral := blusmartflow.New()
+	flowGeral := mgsmartflow.New()
 
 	lblEscanear := widget.NewLabel(c.T("Scan"))
 	lblEscanear.TextStyle = fyne.TextStyle{Bold: true}
@@ -61,16 +61,16 @@ func showOptions(app fyne.App) {
 
 	lblTamanho := widget.NewLabel(c.T("File Size for Scanning"))
 	lblTamanho.TextStyle = fyne.TextStyle{Bold: true}
-	ctnTamanho, txtTamanho := blunumericentry.NewBluNumericEntryWithButtons(0, 10000000, 0)
+	ctnTamanho, txtTamanho := mgnumericentry.NewMGNumericEntryWithButtons(0, 10000000, 0)
 
 	flowGeral.AddRow(lblTamanho)
 	flowGeral.AddRow(ctnTamanho)
 
-	flowIgnorar := blusmartflow.New()
+	flowIgnorar := mgsmartflow.New()
 
-	cvIgnorarPastas := blucolumnview.NewColumnView([]string{c.T("Ignore Folders")}, []float32{38, 400}, true)
+	cvIgnorarPastas := mgcolumnview.NewColumnView([]string{c.T("Ignore Folders")}, []float32{38, 400}, true)
 	btnIgnorarPastasAdd := widget.NewButton(c.T("Add"), func() {
-		bludialogbox.NewSelectDirectory(app, c.T("Select Directory"), true, func(s []string) {
+		mgdialogbox.NewSelectDirectory(app, c.T("Select Directory"), true, func(s []string) {
 			if len(s) > 0 {
 				for _, pathname := range s {
 					cvIgnorarPastas.AddRow([]string{pathname})
@@ -90,9 +90,9 @@ func showOptions(app fyne.App) {
 	separator1 := widget.NewSeparator()
 	flowIgnorar.AddRow(separator1)
 
-	cvIgnorarArquivos := blucolumnview.NewColumnView([]string{c.T("Ignore Files")}, []float32{38, 400}, true)
+	cvIgnorarArquivos := mgcolumnview.NewColumnView([]string{c.T("Ignore Files")}, []float32{38, 400}, true)
 	btnIgnorarArquivosAdd := widget.NewButton(c.T("Add"), func() {
-		bludialogbox.NewOpenFile(app, c.T("Open File"), []string{}, true, func(s []string) {
+		mgdialogbox.NewOpenFile(app, c.T("Open File"), []string{}, true, func(s []string) {
 			if len(s) > 0 {
 				for _, filename := range s {
 					cvIgnorarArquivos.AddRow([]string{filename})

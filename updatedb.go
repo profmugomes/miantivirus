@@ -1,20 +1,19 @@
-// Copyright (C) 2024-2026 Murilo Gomes Julio
+// Copyright (C) 2024-2026 Murilo Gomes <profmugomes.com.br>
 // SPDX-License-Identifier: GPL-2.0-only
 
-// Site: https://www.bluice.com.br
+// Site: https://www.profmugomes.com.br
 
 package main
 
 import (
-	c "bluiceoficial/miantivirus/controls"
+	c "profmugomes/miantivirus/controls"
 	"os"
-
-	"github.com/bluiceoficial/blurun"
 
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/widget"
-	"github.com/bluiceoficial/bludialogbox"
-	"github.com/bluiceoficial/blusmartflow"
+	"github.com/profmugomes/mgdialogbox/v2"
+	"github.com/profmugomes/mgrun/v2"
+	"github.com/profmugomes/mgsmartflow/v2"
 )
 
 func showUpdateDB(app fyne.App) {
@@ -24,7 +23,7 @@ func showUpdateDB(app fyne.App) {
 	window.SetFixedSize(true)
 	window.Resize(fyne.NewSize(400, 400))
 
-	flow := blusmartflow.New()
+	flow := mgsmartflow.New()
 
 	lblInfo := widget.NewLabel(c.T("Checking for updates..."))
 	lblInfo.TextStyle = fyne.TextStyle{Bold: true}
@@ -40,7 +39,7 @@ func showUpdateDB(app fyne.App) {
 
 	go func() {
 		//
-		s := blurun.New("pkexec sh -c 'killall freshclam;freshclam'")
+		s := mgrun.New("pkexec sh -c 'killall freshclam;freshclam'")
 		pathHome, _ := os.UserHomeDir()
 		s.SetDir(pathHome)
 		s.AddEnv("teste", "abc")
@@ -59,7 +58,7 @@ func showUpdateDB(app fyne.App) {
 		})
 
 		if err := s.Run(); err != nil {
-			bludialogbox.NewAlert(app, c.T("Update Database"), err.Error(), true, "Ok")
+			mgdialogbox.NewAlert(app, c.T("Update Database"), err.Error(), true, "Ok", nil)
 		}
 
 		fyne.Do(func() {

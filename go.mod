@@ -1,25 +1,24 @@
-module bluiceoficial/miantivirus
+module profmugomes/miantivirus
 
 go 1.26.5
 
 require (
-	fyne.io/fyne/v2 v2.8.0
-	github.com/bluiceoficial/blucolumnview v1.0.0
-	github.com/bluiceoficial/bludialogbox v1.0.1
-	github.com/bluiceoficial/blulang v1.0.1
-	github.com/bluiceoficial/blunumericentry v1.0.0
-	github.com/bluiceoficial/blurun v1.0.0
-	github.com/bluiceoficial/blusettings v1.0.0
-	github.com/bluiceoficial/blusmartflow v1.0.0
+	fyne.io/fyne/v2 v2.8.1
+	github.com/profmugomes/mgcolumnview/v2 v2.0.0
+	github.com/profmugomes/mgdialogbox/v2 v2.0.0
+	github.com/profmugomes/mglang/v2 v2.0.0
+	github.com/profmugomes/mgnumericentry/v2 v2.0.0
+	github.com/profmugomes/mgrun/v2 v2.0.1
+	github.com/profmugomes/mgsettings/v4 v4.0.0
+	github.com/profmugomes/mgsmartflow/v2 v2.0.0
 )
 
 require (
-	fyne.io/systray v1.12.2 // indirect
+	fyne.io/systray v1.12.3-0.20260810170012-af4e8e793ec4 // indirect
 	github.com/BurntSushi/toml v1.6.0 // indirect
 	github.com/anthonynsimon/bild v0.14.0 // indirect
 	github.com/clipperhouse/uax29/v2 v2.2.0 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
-	github.com/fredbi/uri v1.1.1 // indirect
 	github.com/fsnotify/fsnotify v1.9.0 // indirect
 	github.com/fyne-io/gl-js v0.2.1-0.20260315212741-029c47fd27e8 // indirect
 	github.com/fyne-io/glfw-js v0.4.0 // indirect

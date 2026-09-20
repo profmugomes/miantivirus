@@ -1,7 +1,7 @@
-// Copyright (C) 2024-2026 Murilo Gomes Julio
+// Copyright (C) 2024-2026 Murilo Gomes <profmugomes.com.br>
 // SPDX-License-Identifier: GPL-2.0-only
 
-// Site: https://www.bluice.com.br
+// Site: https://www.profmugomes.com.br
 
 package main
 
@@ -17,17 +17,16 @@ import (
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/widget"
 
-	c "bluiceoficial/miantivirus/controls"
+	c "profmugomes/miantivirus/controls"
 
-	"github.com/bluiceoficial/blucolumnview"
-	"github.com/bluiceoficial/bludialogbox"
-	"github.com/bluiceoficial/blurun"
-
-	"github.com/bluiceoficial/blusettings"
-	"github.com/bluiceoficial/blusmartflow"
+	"github.com/profmugomes/mgcolumnview/v2"
+	"github.com/profmugomes/mgdialogbox/v2"
+	"github.com/profmugomes/mgrun/v2"
+	"github.com/profmugomes/mgsettings/v4"
+	"github.com/profmugomes/mgsmartflow/v2"
 )
 
-func showScan(app fyne.App, listAll []blucolumnview.SelectRow) {
+func showScan(app fyne.App, listAll []mgcolumnview.SelectRow) {
 	c.LoadTranslations()
 
 	window := app.NewWindow(c.T("Scan"))
@@ -35,7 +34,7 @@ func showScan(app fyne.App, listAll []blucolumnview.SelectRow) {
 	window.SetFixedSize(true)
 	window.Resize(fyne.NewSize(800, 379))
 
-	flow := blusmartflow.New()
+	flow := mgsmartflow.New()
 
 	lblVerificando := widget.NewLabel(c.T("Check:"))
 	lblInfo := widget.NewLabel("")
@@ -43,7 +42,7 @@ func showScan(app fyne.App, listAll []blucolumnview.SelectRow) {
 	flow.AddColumn(lblVerificando, lblInfo)
 	flow.Resize(lblVerificando, 79, 38)
 
-	lstArquivos := blucolumnview.NewColumnView(
+	lstArquivos := mgcolumnview.NewColumnView(
 		[]string{c.T("Files"), "", ""},
 		[]float32{38, 400, 179, 79}, true,
 	)
@@ -52,7 +51,7 @@ func showScan(app fyne.App, listAll []blucolumnview.SelectRow) {
 	flow.Resize(lstArquivos, window.Canvas().Size().Width-7, 272)
 
 	btnGerarRelatorio := widget.NewButton(c.T("Generate Report"), func() {
-		bludialogbox.NewSelectDirectory(app, c.T("Save File"), false, func(s []string) {
+		mgdialogbox.NewSelectDirectory(app, c.T("Save File"), false, func(s []string) {
 			if len(s) > 0 && len(lstArquivos.ListAll()) > 0 {
 				var txt strings.Builder
 				var sData string
@@ -96,7 +95,7 @@ func showScan(app fyne.App, listAll []blucolumnview.SelectRow) {
 				filename := strings.Split(data, "|")
 				if len(filename) > 0 {
 					if err := os.Remove(filename[0]); err != nil {
-						bludialogbox.NewAlert(app, c.T("Remove File"), err.Error(), true, "Ok")
+						mgdialogbox.NewAlert(app, c.T("Remove File"), err.Error(), true, "Ok", nil)
 					} else {
 						lstArquivos.UpdateColumnItem(row.ID, 2, c.T("Deleted"))
 					}
@@ -108,7 +107,7 @@ func showScan(app fyne.App, listAll []blucolumnview.SelectRow) {
 	btnRemoverArquivo.Disable()
 
 	btnCancelar := widget.NewButton(c.T("Cancel"), func() {
-		run := blurun.New("killall clamscan")
+		run := mgrun.New("killall clamscan")
 		if err := run.Run(); err != nil {
 			fmt.Println("Error: ", err.Error())
 		}
@@ -117,7 +116,7 @@ func showScan(app fyne.App, listAll []blucolumnview.SelectRow) {
 
 	flow.AddColumn(btnGerarRelatorio, btnRemoverArquivo, btnCancelar)
 
-	bluconfig, _ := blusettings.Load("miantivirus", true)
+	bluconfig, _ := mgsettings.Load("miantivirus", true)
 
 	var (
 		command           string = "--verbose --recursive=yes --no-summary"
@@ -184,7 +183,7 @@ func showScan(app fyne.App, listAll []blucolumnview.SelectRow) {
 	//sParts := strings.Fields(command)
 
 	go func() {
-		s := blurun.New("clamscan " + command)
+		s := mgrun.New("clamscan " + command)
 		pathHome, _ := os.UserHomeDir()
 		s.SetDir(pathHome)
 		s.OnStdout(func(sLine string) {
@@ -224,7 +223,7 @@ func showScan(app fyne.App, listAll []blucolumnview.SelectRow) {
 					btnRemoverArquivo.Enable()
 					btnCancelar.Disable()
 				} else {
-					bludialogbox.NewAlert(app, "MiAntivirus", c.T("No viruses found!"), false, "Ok")
+					mgdialogbox.NewAlert(app, "MiAntivirus", c.T("No viruses found!"), false, "Ok", nil)
 					window.Close()
 				}
 			})

@@ -1,7 +1,7 @@
-// Copyright (C) 2024-2026 Murilo Gomes Julio
+// Copyright (C) 2024-2026 Murilo Gomes <profmugomes.com.br>
 // SPDX-License-Identifier: GPL-2.0-only
 
-// Site: https://www.bluice.com.br
+// Site: https://www.profmugomes.com.br
 
 package main
 
@@ -13,7 +13,7 @@ import (
 	"fyne.io/fyne/v2/canvas"
 	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/widget"
-	"github.com/bluiceoficial/blusmartflow"
+	"github.com/profmugomes/mgsmartflow/v2"
 )
 
 func showAbout(a fyne.App) {
@@ -22,7 +22,7 @@ func showAbout(a fyne.App) {
 	w.CenterOnScreen()
 	w.SetFixedSize(true)
 
-	flow := blusmartflow.New()
+	flow := mgsmartflow.New()
 
 	lblSoftware := canvas.NewText("MiAntivirus - Version: "+VERSION_APP, color.Opaque)
 	lblSoftware.TextSize = 18
