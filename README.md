@@ -4,9 +4,9 @@ MiAntivirus é uma interface gráfica para o ClamAV que permite verificar seu co
 
 ## Capturas de tela
 
-<img width="660" height="506" alt="image" src="https://github.com/user-attachments/assets/ea248e4d-b97a-4ca5-88b3-05077318fb64" />
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/ea248e4d-b97a-4ca5-88b3-05077318fb64" />
 
-<img width="564" height="674" alt="image" src="https://github.com/user-attachments/assets/be60d4d3-91f9-4eaf-8e97-c4188e31e27b" />
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/be60d4d3-91f9-4eaf-8e97-c4188e31e27b" />
 
 ## Contribuição
 
