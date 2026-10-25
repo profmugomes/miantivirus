@@ -79,6 +79,8 @@ O software pode conter algumas limitações ou bugs, portanto, é muito importan
 ### Linux
 
 - Ubuntu 26.04 or higher
+- clamav
+- pkexec
 
 ## 👤 Autor
 
