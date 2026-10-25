@@ -1,14 +1,12 @@
 # MiAntivirus
 
-[![License](https://img.shields.io/badge/license-PolyForm%20Perimeter%201.0.1-5351FB)](LICENSE.md)
-
 MiAntivirus é uma interface gráfica para o ClamAV que permite verificar seu computador em busca de vírus e atualizar facilmente o banco de dados de definições de vírus por meio de uma interface amigável.
 
 ## Capturas de tela
 
-<img height="300" alt="image" src="https://github.com/user-attachments/assets/7b2299fa-7515-4be8-9b00-604ed03b73da" />
+<img width="660" height="506" alt="image" src="https://github.com/user-attachments/assets/ea248e4d-b97a-4ca5-88b3-05077318fb64" />
 
-<img height="300" alt="image" src="https://github.com/user-attachments/assets/9e362326-73e4-4441-8b90-15bfd789fce7" />
+<img width="564" height="674" alt="image" src="https://github.com/user-attachments/assets/be60d4d3-91f9-4eaf-8e97-c4188e31e27b" />
 
 ## Contribuição
 
@@ -23,7 +21,6 @@ MiAntivirus é uma interface gráfica para o ClamAV que permite verificar seu co
 ## Apoio
 
 * https://github.com/sponsors/profmugomes
-
 
 ## Instalação
 
@@ -73,6 +70,16 @@ Esses recursos são executados externamente pelo MiAntivirus e não fazem parte 
 
 O software pode conter algumas limitações ou bugs, portanto, é muito importante utilizar os canais oficiais de contato para relatar bugs.
 
+## Information
+
+ - [Repository MiAntivirus](https://github.com/profmugomes/miantivirus)
+
+## System Requirement
+
+### Linux
+
+- Ubuntu 26.04 or higher
+
 ## 👤 Autor
 
 **Murilo Gomes**
@@ -85,26 +92,10 @@ O software pode conter algumas limitações ou bugs, portanto, é muito importan
 
 ## License
 
-Copyright (c) 2025-2026 Murilo Gomes <profmugomes.com.br>. All Rights Reserved.
+The MiAntivirus is provided under:
 
-This project is licensed under the PolyForm Perimeter License 1.0.1.
+[SPDX-License-Identifier: GPL-2.0-only](https://spdx.org/licenses/GPL-2.0-only.html)
 
-### Summary
+Beign under the terms of the GNU General Public License version 2 only.
 
-This software is available for commercial and noncommercial use, subject to the terms of the PolyForm Perimeter License 1.0.1.
-
-You may:
-
-* ✔ Use the software for commercial and noncommercial purposes.
-* ✔ Inspect and study the source code.
-* ✔ Modify the software.
-* ✔ Create derivative works based on the software.
-* ✔ Redistribute the software and permitted modifications.
-
-You may not:
-
-* ✖ Provide a product that competes with the software.
-
-See the full license terms at LICENSE.md.
-
-This summary is provided for convenience only and does not replace or modify the full license terms.
+All contributions to the MiAntivirus are subject to this license.
