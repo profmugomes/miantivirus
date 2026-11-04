@@ -41,7 +41,7 @@ Para verificar a integridade, copie o hash fornecido ao lado da versão baixada 
 Exemplo:
 
 ```bash
-echo "12f95d1ba9b46f5713d8010963c4c782e315b7985027c44c6e292ede69454301 miantivirus_6.0.0_all.deb" | sha256sum -c
+echo "12f95d1ba9b46f5713d8010963c4c782e315b7985027c44c6e292ede69454301 miantivirus_4.0.0_all.deb" | sha256sum -c
 ```
 
 Se "Success" for exibido, o arquivo foi baixado corretamente.
