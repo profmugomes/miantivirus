@@ -8,7 +8,6 @@ MiAntivirus é uma interface gráfica para o ClamAV que permite verificar seu co
 
 <img width="300" alt="image" src="https://github.com/user-attachments/assets/a6dfb740-ffa0-4caf-93ab-68b13e9579d2" />
 
-
 ## Contribuição
 
 1. Relate bugs ou envie sugestões: https://github.com/profmugomes/miantivirus/issues
@@ -42,7 +41,7 @@ Para verificar a integridade, copie o hash fornecido ao lado da versão baixada 
 Exemplo:
 
 ```bash
-echo "12f95d1ba9b46f5713d8010963c4c782e315b7985027c44c6e292ede69454301 miantivirus_4.0.0_all.deb" | sha256sum -c
+echo "12f95d1ba9b46f5713d8010963c4c782e315b7985027c44c6e292ede69454301 miantivirus_6.0.0_all.deb" | sha256sum -c
 ```
 
 Se "Success" for exibido, o arquivo foi baixado corretamente.
@@ -80,6 +79,7 @@ O software pode conter algumas limitações ou bugs, portanto, é muito importan
 ### Linux
 
 - Ubuntu 26.04 or higher
+- Graphics: GPU with OpenGL support (required for 3D acceleration)
 - clamav
 - pkexec
 
