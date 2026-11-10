@@ -2,7 +2,7 @@
 Title=MiAntivirus
 Startup=FMain
 Icon=miantivirus.png
-Version=7.0.0
+Version=7.0.1
 Component=gb.image
 Component=gb.gtk3
 Component=gb.form
@@ -19,7 +19,7 @@ VendorPrefix=profmugomes
 Address=profmugomes@gmail.com
 Url=https://www.profmugomes.com.br
 License=General Public License V2 only
-PackageName=miantivirus-6.0.1
+PackageName=miantivirus-7.0.1
 CreateEachDirectory=1
 Packager=1
 Systems=ubuntu
