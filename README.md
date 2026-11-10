@@ -29,22 +29,12 @@ MiAntivirus é uma interface gráfica para o ClamAV que permite verificar seu co
 Clique duas vezes no pacote deb e clique em instalar, ou execute o comando no terminal:
 
 ```bash
-sudo dpkg -i miantivirus*.deb
-
-sudo apt install -f
+sudo dpkg -i miantivirus*.deb && sudo apt install -f
 ```
 
 ### Integridade
 
-Para verificar a integridade, copie o hash fornecido ao lado da versão baixada e use o [MiCheckHash](https://github.com/profmugomes/micheckhash/releases) (interface gráfica) para verificar sua integridade, ou use o terminal.
-
-Exemplo:
-
-```bash
-echo "12f95d1ba9b46f5713d8010963c4c782e315b7985027c44c6e292ede69454301 miantivirus_4.0.0_all.deb" | sha256sum -c
-```
-
-Se "Success" for exibido, o arquivo foi baixado corretamente.
+Para verificar a integridade, use o [MiCheckHash](https://github.com/profmugomes/micheckhash/releases) (interface gráfica) para verificar sua integridade, ou use o terminal.
 
 ## Uso
 
@@ -70,18 +60,16 @@ Esses recursos são executados externamente pelo MiAntivirus e não fazem parte 
 
 O software pode conter algumas limitações ou bugs, portanto, é muito importante utilizar os canais oficiais de contato para relatar bugs.
 
-## Information
+## Informação
 
- - [Repository MiAntivirus](https://github.com/profmugomes/miantivirus)
+ - [Repositório MiAntivirus](https://github.com/profmugomes/miantivirus)
 
-## System Requirement
+## Requerimento do Sistema
 
 ### Linux
 
-- Ubuntu 26.04 or higher
-- Graphics: GPU with OpenGL support (required for 3D acceleration)
-- clamav
-- pkexec
+- Ubuntu 26.04 ou superior
+- Dependências do Gambas3, clamav e pkexec
 
 ## 👤 Autor
 
