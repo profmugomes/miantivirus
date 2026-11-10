@@ -1,54 +1,13 @@
 # MiAntivirus
 
+> [!NOTE]
+> A partir da versão 7, o MiAntivirus é compatível com Linux Lubuntu, devendo funcionar na distro Ubuntu e distros baseados no Ubuntu.
+
 MiAntivirus é uma interface gráfica para o ClamAV que permite verificar seu computador em busca de vírus e atualizar facilmente o banco de dados de definições de vírus por meio de uma interface amigável.
-
-## Contribuição
-
-1. Relate bugs ou envie sugestões: https://github.com/profmugomes/miantivirus/issues
-
-2. Envie traduções para outros idiomas: baixe o arquivo `.po`, traduza-o e envie-o por meio de um Pull Request.
-
-3. Se quiser, dê uma "estrela" ao MiAntivirus.
-
-4. Apoie financeiramente o projeto por meio do GitHub Sponsors ou de outras formas de apoio.
 
 ## Apoio
 
 * https://github.com/sponsors/profmugomes
-
-## Instalação
-
-### DEB
-
-Clique duas vezes no pacote deb e clique em instalar, ou execute o comando no terminal:
-
-```bash
-sudo dpkg -i miantivirus*.deb && sudo apt install -f
-```
-
-### Integridade
-
-Para verificar a integridade, use o [MiCheckHash](https://github.com/profmugomes/micheckhash/releases) (interface gráfica) para verificar sua integridade, ou use o terminal.
-
-## Uso
-
-O MiAntivirus permite verificar vários arquivos e pastas; basta clicar em "Adicionar" e escolher quais deseja adicionar. Você pode adicionar ambos os tipos.
-
-Antes da verificação, sempre recomendo atualizar o banco de dados do ClamAV. Para isso, clique em "Atualizar banco de dados" no menu Ferramentas. Quando a atualização for concluída, uma mensagem "Concluído" será exibida.
-
-Em Opções, no menu Ferramentas, você pode ativar e desativar os recursos de verificação e adicionar e remover pastas e arquivos que deseja ignorar durante a verificação.
-
-Ao clicar em "Verificar", o ClamAV será carregado. Esse processo pode levar algum tempo (essa lentidão no carregamento do banco de dados ocorre devido ao próprio ClamAV). Após o carregamento, as pastas e os arquivos selecionados serão verificados. Quando a análise for concluída, você poderá remover arquivos ou pastas infectados, caso algum vírus seja detectado.
-
-**Atenção:** o ClamAV pode apresentar alguns falsos positivos, portanto, considere se realmente deseja excluí-los. Essa exclusão é permanente e não pode ser recuperada. Portanto, tenha cuidado ao excluir um arquivo ou pasta.
-
-Para verificar se há novas atualizações do MiAntivirus, clique em Verificar atualizações no menu Sobre.
-
-### Comandos Externos
-
-O MiAntivirus utiliza o ClamAV e o pkexec por meio de seus comandos disponibilizados pelo sistema operacional.
-
-Esses recursos são executados externamente pelo MiAntivirus e não fazem parte do código ou dos binários distribuídos pelo projeto. Dessa forma, o funcionamento desses componentes depende da instalação e configuração adequada no sistema do usuário.
 
 ## Limitações/Bugs
 
@@ -62,7 +21,7 @@ O software pode conter algumas limitações ou bugs, portanto, é muito importan
 
 ### Linux
 
-- Ubuntu 26.04 ou superior
+- Lubuntu 26.04 ou superior
 - Dependências do Gambas3, clamav e pkexec
 
 ## 👤 Autor

@@ -1,3 +1,6 @@
+* Tue Nov 10 2026 Murilo Gomes <profmugomes@gmail.com> 7.0.2
+- Ajustado o README do projeto
+
 * Tue Nov 10 2026 Murilo Gomes <profmugomes@gmail.com> 7.0.1
 - Migrado para o Gambas3
 - Ajustado o código para funcionar no Ubuntu 26.04 ou superior
