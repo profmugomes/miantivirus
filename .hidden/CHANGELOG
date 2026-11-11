@@ -1,3 +1,6 @@
+* Wed Nov 11 2026 Murilo Gomes <profmugomes@gmail.com> 7.0.7
+- Ajustado para funcionar com as dependencias do Gambas 3.20.
+
 * Tue Nov 10 2026 Murilo Gomes <profmugomes@gmail.com> 7.0.2
 - Ajustado o README do projeto
 
