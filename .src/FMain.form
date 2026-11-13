@@ -1,7 +1,7 @@
 # Gambas Form File 3.0
 
 { Form Form
-  MoveScaled(0,0,82,59)
+  MoveScaled(0,0,86,59)
   Font = Font["12"]
   Text = ("MiAntivirus")
   Icon = Picture["miantivirus.png"]
@@ -28,28 +28,27 @@
       Text = ("About MiAntivirus")
     }
   }
-  { Label2 Label
-    MoveScaled(2,3.375,36,4)
-    Font = Font["Bold"]
-    Text = ("Select files or folders")
+  { btnRemoveAll Button
+    MoveScaled(57,3,26,5)
+    Text = ("Remove All")
   }
-  { btnRemover Button
-    MoveScaled(59,3,21,5)
-    Text = ("Remove")
-  }
-  { btnAdicionar Button
-    MoveScaled(37,3,21,5)
+  { btnAdd Button
+    MoveScaled(3,3,26,5)
     Text = ("Add")
   }
   { btnVerificar Button
-    MoveScaled(29,45,25,5)
+    MoveScaled(30,45,25,5)
     Text = ("Scan")
   }
   { cvArquivos ColumnView
-    MoveScaled(2,9,78,34)
+    MoveScaled(2,9,82,34)
     #Translate = False
     Mode = Select.Multiple
     Resizable = True
     ShowCheck = True
+  }
+  { btnRemove Button
+    MoveScaled(30,3,26,5)
+    Text = ("Remove")
   }
 }

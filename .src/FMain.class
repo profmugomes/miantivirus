@@ -17,7 +17,7 @@ Public Sub mnuOpcoes_Click()
   
 End
 
-Public Sub btnAdicionar_Click()
+Public Sub btnAdd_Click()
   
   Dim sDialog As Integer = Message.Question(("Add file or folder?"), ("File"), ("Folder"), ("Cancel"))
   
@@ -44,14 +44,10 @@ Catch
   
 End
 
-Public Sub btnRemover_Click()
-  
-  If cvArquivos.Selection.Count > 0 Then 
-    For Each row As String In cvArquivos.Selection
-      cvArquivos.Remove(row)
-    Next
-  Endif 
-  
+Public Sub btnRemoveAll_Click()
+  For Each row As String In cvArquivos.Keys
+    cvArquivos.Remove(row)
+  Next
 End
 
 Public Sub btnVerificar_Click()
@@ -89,4 +85,14 @@ Public Sub mnuApoie_Click()
   
   Shell "xdg-open \"https://github.com/sponsors/profmugomes\"" To sTerm
   
+End
+
+Public Sub btnRemove_Click()
+
+  If cvArquivos.Selection.Count > 0 Then 
+    For Each row As String In cvArquivos.Selection
+      cvArquivos.Remove(row)
+    Next
+  Endif 
+
 End

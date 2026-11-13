@@ -1,8 +1,8 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: miantivirus 3.20.4\n"
-"PO-Revision-Date: 2026-11-10 19:41 UTC\n"
+"Project-Id-Version: miantivirus 3.22.2\n"
+"PO-Revision-Date: 2026-11-13 17:09 UTC\n"
 "Last-Translator: profmugomes <profmugomes@gmail.com>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
@@ -17,15 +17,11 @@ msgstr "0 = Qualquer Tamanho"
 msgid "About"
 msgstr "Sobre"
 
-#: FAbout.form:16
-msgid "About MIAntivirus"
-msgstr "Sobre MIAntivirus"
-
 #: FMain.form:51
 msgid "About MiAntivirus"
 msgstr "Sobre MiAntivirus"
 
-#: FMain.form:68 FOpcoes.form:122
+#: FMain.form:62 FOpcoes.form:122
 msgid "Add"
 msgstr "Adicionar"
 
@@ -130,15 +126,19 @@ msgstr "Não"
 msgid "Options"
 msgstr "Opções"
 
-#: FMain.form:63 FOpcoes.form:117 FVerificar.form:37
+#: FMain.form:79 FOpcoes.form:117 FVerificar.form:37
 msgid "Remove"
 msgstr "Remover"
+
+#: FMain.form:57
+msgid "Remove All"
+msgstr "Remover Tudo"
 
 #: FOpcoes.form:158
 msgid "Save"
 msgstr "Salvar"
 
-#: FMain.form:73 FOpcoes.form:42
+#: FMain.form:67 FOpcoes.form:42
 msgid "Scan"
 msgstr "Escanear"
 
@@ -166,10 +166,6 @@ msgstr "Selecionar Tudo"
 #: FMain.class:25 FOpcoes.class:96
 msgid "Select Files"
 msgstr "Selecionar Arquivos"
-
-#: FMain.form:58
-msgid "Select files or folders"
-msgstr "Selecionar arquivos ou pastas"
 
 #: FMain.class:35 FOpcoes.class:79
 msgid "Select Folder"
