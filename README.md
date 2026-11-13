@@ -21,8 +21,10 @@ O software pode conter algumas limitações ou bugs, portanto, é muito importan
 
 ### Linux
 
-- Lubuntu 26.04 ou superior
+- Lubuntu 26.04 LTS ou superior
 - Dependências do Gambas3, clamav e pkexec
+
+No Lubuntu 24.04 LTS requer o gambas3-gb-gtk3-x11 pra funcionar.
 
 ## 👤 Autor
 
