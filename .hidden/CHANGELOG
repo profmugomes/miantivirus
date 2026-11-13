@@ -1,8 +1,5 @@
-* Fri Nov 13 2026 Murilo Gomes <profmugomes@gmail.com> 7.0.22
-- Ajustado para funcionar no Ubuntu 24.04 ou superior
-
-* Fri Nov 13 2026 Murilo Gomes <profmugomes@gmail.com> 7.0.21
-- Ajustado para funcionar em um AppImage.
+* Fri Nov 13 2026 Murilo Gomes <profmugomes@gmail.com> 7.0.24
+- Ajustado para funcionar no Ubuntu 24.04 LTS ou superior
 
 * Wed Nov 11 2026 Murilo Gomes <profmugomes@gmail.com> 7.0.18
 - Ajustado para funcionar com as dependencias do Gambas 3.20.
@@ -13,4 +10,3 @@
 * Tue Nov 10 2026 Murilo Gomes <profmugomes@gmail.com> 7.0.1
 - Migrado para o Gambas3
 - Ajustado o código para funcionar no Ubuntu 26.04 ou superior
-
