@@ -2,7 +2,7 @@
 Title=MiAntivirus
 Startup=FMain
 Icon=miantivirus.png
-Version=7.0.21
+Version=7.0.22
 Component=gb.image
 Component=gb.pcre
 Component=gb.settings
